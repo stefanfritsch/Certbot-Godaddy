@@ -6,6 +6,12 @@
 # This software may be modified and distributed under the terms
 # of the BSD license.  See the LICENSE file for details.
 
+SCRIPTDIR=$(dirname -- "$(readlink -f -- "$0")")
+echo "SCRIPTDIR: ${SCRIPTDIR}"
+source $SCRIPTDIR/api-settings.sh
+
+echo "DOMAIN: ${DOMAIN}"
+
 DNS_REC_TYPE=TXT
 DNS_REC_NAME="_acme-challenge."${CERTBOT_DOMAIN%${DOMAIN}}
 DNS_REC_NAME=${DNS_REC_NAME%.}
