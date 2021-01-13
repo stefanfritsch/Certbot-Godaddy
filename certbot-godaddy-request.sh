@@ -20,5 +20,4 @@ certbot certonly \
         --manual \
         --manual-auth-hook $SCRIPTDIR/certbot-godaddy-auth.sh \
         --manual-cleanup-hook $SCRIPTDIR/certbot-godaddy-cleanup.sh \
-        -d *.${DOMAIN} \
-        -d ${DOMAIN}
+        ${CERTS[@]}

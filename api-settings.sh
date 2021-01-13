@@ -9,6 +9,7 @@
 ############################################################
 # Domain settings
 DOMAIN=example.com
+CERTS=( -d "*.${DOMAIN}" -d "${DOMAIN}" )
 EMAIL=letsencrypt@${DOMAIN}
 ############################################################
 
