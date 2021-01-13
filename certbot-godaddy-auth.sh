@@ -6,7 +6,7 @@
 # This software may be modified and distributed under the terms
 # of the BSD license.  See the LICENSE file for details.
 
-source $(dirname $(readlink -f $0))/api-settings.sh
+source $(dirname -- "$(readlink -f -- "$0")")/api-settings.sh
 
 DNS_REC_TYPE=TXT
 DNS_REC_NAME="_acme-challenge"
