@@ -8,9 +8,7 @@
 # This software may be modified and distributed under the terms
 # of the BSD license.  See the LICENSE file for details.
 
-SCRIPTDIR=$(dirname -- "$(readlink -f -- "$0")")
-echo "SCRIPTDIR: ${SCRIPTDIR}"
-source $SCRIPTDIR/api-settings.sh
+source $(dirname -- "$(readlink -f -- "$0")")/api-settings.sh
 
 echo "DOMAIN: ${DOMAIN}"
 
