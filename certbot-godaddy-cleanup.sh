@@ -1,3 +1,5 @@
+#!/bin/bash
+#
 # certbot-godaddy-cleanup.sh -- A Certbot cleanup callback script
 #
 # Copyright (C) 2019 Martijn Veldpaus

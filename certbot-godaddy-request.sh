@@ -1,5 +1,5 @@
 #!/bin/bash
-
+#
 # certbot-godaddy-request.sh -- A script to request new Let's Encrypt wildcard certificates
 #
 # Copyright (C) 2019 Martijn Veldpaus
@@ -9,7 +9,7 @@
 # of the BSD license.  See the LICENSE file for details.
 
 SCRIPTDIR=$(dirname -- "$(readlink -f -- "$0")")
-source $SCRIPTDIR/api-settings.sh
+. $SCRIPTDIR/api-settings.sh
 
 certbot certonly \
         --non-interactive \

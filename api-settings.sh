@@ -1,3 +1,5 @@
+#!/bin/bash
+#
 # api-settings.sh -- Configuration file
 #
 # Copyright (C) 2019 Martijn Veldpaus

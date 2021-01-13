@@ -1,5 +1,5 @@
 #!/bin/bash
-
+#
 # certbot-godaddy-renew.sh -- A script to renew new Let's Encrypt wildcard certificates
 #
 # Copyright (C) 2019 Martijn Veldpaus
