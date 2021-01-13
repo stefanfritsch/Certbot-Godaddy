@@ -13,6 +13,10 @@ DNS_REC_DATA="$CERTBOT_VALIDATION"
 
 echo Creating ${DNS_REC_TYPE} record ${DNS_REC_NAME} for certificate renewal with value ${DNS_REC_DATA}
 
+echo "${GODADDY_URL}/v1/domains/${DOMAIN}/records"
+
+echo "[{\"data\": \"${DNS_REC_DATA}\", \"name\": \"${DNS_REC_NAME}\", \"type\": \"${DNS_REC_TYPE}\", \"ttl\": 600}]"
+
 curl    -i \
         -X PATCH \
         "${GODADDY_URL}/v1/domains/${DOMAIN}/records" \
