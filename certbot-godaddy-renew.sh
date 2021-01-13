@@ -14,7 +14,6 @@ source $SCRIPTDIR/api-settings.sh
 certbot renew \
         --non-interactive \
         --agree-tos \
-        --manual-public-ip-logging-ok \
         -m $EMAIL \
         --preferred-challenges dns \
         --manual \

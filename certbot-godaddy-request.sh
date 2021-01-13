@@ -14,7 +14,6 @@ SCRIPTDIR=$(dirname -- "$(readlink -f -- "$0")")
 certbot certonly \
         --non-interactive \
         --agree-tos \
-        --manual-public-ip-logging-ok \
         -m "$EMAIL" \
         --preferred-challenges dns \
         --manual \
