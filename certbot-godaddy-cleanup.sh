@@ -11,7 +11,8 @@
 source $(dirname -- "$(readlink -f -- "$0")")/api-settings.sh
 
 DNS_REC_TYPE=TXT
-DNS_REC_NAME="_acme-challenge"
+DNS_REC_NAME="_acme-challenge."${CERTBOT_DOMAIN%${DOMAIN}}
+DNS_REC_NAME=${DNS_REC_NAME%.}
 DNS_REC_DATA="$CERTBOT_VALIDATION"
 
 echo Replacing ${DNS_REC_TYPE} records for ${DNS_REC_NAME}.${CERTBOT_DOMAIN} with 'park' values
