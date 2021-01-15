@@ -15,10 +15,15 @@ DNS_REC_NAME="_acme-challenge."${CERTBOT_DOMAIN%${DOMAIN}}
 DNS_REC_NAME=${DNS_REC_NAME%.}
 DNS_REC_DATA="$CERTBOT_VALIDATION"
 
-echo Replacing ${DNS_REC_TYPE} records for ${DNS_REC_NAME}.${CERTBOT_DOMAIN} with 'park' values
+echo Replacing ${DNS_REC_TYPE} records for ${DNS_REC_NAME} with 'park' values
+
+echo "${GODADDY_URL}/v1/domains/${DOMAIN}/records/${DNS_REC_TYPE}/${DNS_REC_NAME}"
+
+echo "[{\"data\": \"...\", \"name\": \"${DNS_REC_NAME}\", \"type\": \"${DNS_REC_TYPE}\", \"ttl\": 600}]"
+
 curl    -i \
         -X PUT \
-        "${GODADDY_URL}/v1/domains/${CERTBOT_DOMAIN}/records/${DNS_REC_TYPE}/${DNS_REC_NAME}" \
+        "${GODADDY_URL}/v1/domains/${DOMAIN}/records/${DNS_REC_TYPE}/${DNS_REC_NAME}" \
         -H "accept: application/json" \
         -H "Content-Type: application/json" \
         -H "Authorization: sso-key ${GODADDY_API_KEY}:${GODADDY_API_SECRET}" \
