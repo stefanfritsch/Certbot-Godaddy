@@ -20,4 +20,4 @@ certbot renew \
         --manual-auth-hook $SCRIPTDIR/certbot-godaddy-auth.sh \
         --manual-cleanup-hook $SCRIPTDIR/certbot-godaddy-cleanup.sh \
         --post-hook $SCRIPTDIR/certbot-renew-post-hook.sh \
-        --cert-name ${DOMAIN}
+        --cert-name ${CERTS[1]}
